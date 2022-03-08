@@ -40,28 +40,8 @@ export default function useFirebaseAuth() {
           };
         return sendSignInLinkToEmail(auth, email, actionCodeSettings)
             .then((result) => {
-                window.localStorage.setItem('emailForSignIn', email);
+                localStorage.setItem('emailForSignIn', email);
             })
-    }
-
-    const confirmSignIn = function (href) {
-        const auth = getAuth();
-        if (isSignInWithEmailLink(auth, href)) {
-            let email = window.localStorage.getItem('emailForSignIn');
-            if (!email) {
-                email = window.prompt('Please provide your email for confirmation');
-            }
-            // The client SDK will parse the code from the link for you.
-            return signInWithEmailLink(auth, email, href)
-                .then((result) => {
-                    window.localStorage.removeItem('emailForSignIn');
-                })
-        }
-    }
-
-    const login  = (email) => {
-        const auth = getAuth()
-        return signInWithEmailLink(auth, email, window.location.href)
     }
 
     const logout = () => {
@@ -79,8 +59,6 @@ export default function useFirebaseAuth() {
         authUser,
         loading,
         signUp,
-        confirmSignIn,
-        login,
         logout
     }
 }

@@ -1,5 +1,5 @@
 import { AuthUserProvider } from '../context/AuthUserContext'
-import '../styles/globals.css'
+import 'bootstrap/dist/css/bootstrap.css'; // Add this line
 
 function MyApp({ Component, pageProps }) {
   return <AuthUserProvider><Component {...pageProps} /></AuthUserProvider>

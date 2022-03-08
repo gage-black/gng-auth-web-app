@@ -10,9 +10,12 @@ const nextConfig = {
     { dev, dir, outDir, distDir, buildId }
   ) {
     return {
+      '/': { page: '/' },
       '/login': { page: '/login' },
       '/login/index': { page: '/login' },
+      '/profile': { page: '/profile' },
       '/profile/index': { page: '/profile' },
+      '/sign-up': { page: '/sign-up' },
       '/sign-up/index': { page: '/sign-up' },
     }
   },

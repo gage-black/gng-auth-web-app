@@ -5,8 +5,6 @@ const authUserContext = createContext({
   authUser: null,
   loading: true,
   signUp: async () => {},
-  confirmSignIn: async () => {},
-  login: async () => {},
   logout: async () => {}
 });
 
