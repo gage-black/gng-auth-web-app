@@ -21,7 +21,7 @@ export default function Login() {
 
     useEffect(() => {
       if (!loading && authUser)
-        router.push('/profile')
+        router.replace('/profile')
     }, [authUser, loading, router])
   
     const loginWithEmail = event => {
